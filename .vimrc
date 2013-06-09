@@ -17,8 +17,8 @@ set nostartofline
 set noshowcmd
 set backspace=2
 set report=0
-set statusline=%f\ %{fugitive#statusline()}%=%40(%{Tlist_Get_Tagname_By_Line()}%)\ %h%m%r%=%-10.(%l,%c%V%)\ %P
-set Tlist_WinWidth=60
+"set statusline=%f\ %{fugitive#statusline()}%=%40(%{Tlist_Get_Tagname_By_Line()}%)\ %h%m%r%=%-10.(%l,%c%V%)\ %P
+"set Tlist_WinWidth=60
 set scrolloff=2
 syntax on
 set title
@@ -45,8 +45,9 @@ set history=1000
 "Mappings
 nnoremap <F7> :tabp<CR>
 nnoremap <F8> :tabn<CR>
+cmap W w
+cmap WQ wq
 
-autocmd BufWritePost,FileWritePost *.py call CloseQuickfix()
 
 "Python
 set tabstop=4
