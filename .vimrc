@@ -54,6 +54,25 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+
+"Ctags
+" CTAGS
+set tags=./tags;
+function! UpdateTags()
+    execute ":!/usr/local/opt/ctags/bin/ctags -L <(find . -name '*.py') --fields=+iaS --python-kinds=-i --sort=yes --extra=+q ./"
+    echohl StatusLine | echo "C/C++ tag updated" | echohl None
+endfunction
+nnoremap <F5> :call UpdateTags()
+
+"DjangoTags
+set tags+=~/PythonEnvs/django-meetup/lib/python2.7/site-packages/django/tags;
+
 "Tagbar
 let g:tagbar_usearrows = 1
 nnoremap <leader>l :TagbarToggle<CR>
+
+"Flake8
+let g:syntastic_python_flake8_post_args='--ignore=E501,E126,E128,E225'
+
+"Django
+au BufRead,BufNewFile *.djhtml set filetype=htmldjango
