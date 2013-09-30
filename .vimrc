@@ -45,8 +45,6 @@ set history=1000
 "Mappings
 nnoremap <F7> :tabp<CR>
 nnoremap <F8> :tabn<CR>
-cmap W w
-cmap WQ wq
 
 
 "Python
