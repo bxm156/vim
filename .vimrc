@@ -74,3 +74,8 @@ let g:syntastic_python_flake8_post_args='--ignore=E501,E126,E128,E225'
 
 "Django
 au BufRead,BufNewFile *.djhtml set filetype=htmldjango
+
+"Pig
+augroup filetypedetect 
+  au BufNewFile,BufRead *.pig set filetype=pig syntax=pig 
+augroup END
